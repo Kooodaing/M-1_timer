@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #ffaa00;
+    border: 2px solid #ffaa00;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.timer-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.timer {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ff0000;
+    transition: all 0.3s ease;
+}
+
+.timer.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+}
+
+.timer.explode {
+    animation: explode 0.7s ease-out;
+    border-color: #ffaa00;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+    }
+}
+
+.time-display {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.timer-title {
+    font-size: 24px;
+    color: #ff0000;
+    margin-bottom: 10px;
+}
+
+.target-time {
+    font-size: 16px;
+    color: #ff0000;
+    margin-bottom: 20px;
+}
+
+.start-btn, .reset-btn {
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn::before, .reset-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.start-btn:hover, .reset-btn:hover {
+    background-color: #cc0000;
+}
+
+.start-btn:hover::before, .reset-btn:hover::before {
+    width: 200%;
+    height: 200%;
+}
+
+.start-btn:active, .reset-btn:active {
+    transform: scale(0.98);
+}
