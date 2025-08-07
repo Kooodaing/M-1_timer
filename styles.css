@@ -15,6 +15,42 @@ body {
     padding: 0;
 }
 
+/* Add viewport meta tag for mobile devices */
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .container {
+        width: 100%;
+        margin: 0 10px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .timer-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .timer {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .timer-title {
+        font-size: 20px;
+    }
+    
+    .time-display {
+        font-size: 36px;
+    }
+}
+
 .container {
     text-align: center;
     padding: 20px;
